@@ -4,26 +4,22 @@ public class DefaultCountingOutRhymer {
 
     private int[] numbers = new int[12];
 
-    private int total = -1;
-
-    public int getTotal() {
-        return total;
-    }
+    public int total = -1;
 
     public void countIn(int in) {
         if (!isFull())
             numbers[++total] = in;
     }
 
-    boolean callCheck() {
+    public boolean callCheck() {
         return total == -1;
     }
 
-    boolean isFull() {
+    public boolean isFull() {
         return total == 11;
     }
 
-    int peekaboo() {
+    protected int peekaboo() {
         if (callCheck())
             return -1;
         return numbers[total];
